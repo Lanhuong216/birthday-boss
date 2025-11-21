@@ -723,7 +723,7 @@ function startWishesTyping() {
     playerWish
       ? `Và chúc cho điều ước của anh: "${playerWish}" sẽ thành sự thật!`
       : "",
-    "Hết òi đó ạa",
+    "Hết òi đó ạa... 1 lần nữa chúc anh sinh nhật vui vẻ ạa",
   ];
 
   // Reset tất cả text
