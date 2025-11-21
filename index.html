@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Birthday Game</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Audio elements -->
+        <audio id="background-music" loop>
+            <source src="asset/background-music.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="typing-sound">
+            <source src="asset/key-typing.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="congratulations-music" loop>
+            <source src="asset/happy-birthday-to-you.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Splash Screen - Click để bắt đầu -->
+        <div id="splash-screen" class="splash-screen">
+            <div class="splash-content">
+                <h1 class="splash-title">Sít rịt đang chờ đợi anh...</h1>
+                <p class="splash-subtitle">Click để bắt đầu nheee</p>
+            </div>
+        </div>
+
+        <!-- Màn 1: Intro - Dê chào hỏi -->
+        <section id="screen-intro" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="goat-container">
+                <img src="asset/goat.png" alt="Goat"
+                    class="goat-img">
+            </div>
+            <div class="content-container">
+                <div class="dialogue-frame">
+                    <img src="asset/chat-frame.png" alt="Chat Frame"
+                        class="frame-img">
+                    <div class="dialogue-content">
+                        <div class="dialogue-text">
+                            <p id="intro-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-intro-2')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Màn 2: Intro - Hôm nay là 22.11 -->
+        <section id="screen-intro-2" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="goat-container">
+                <img src="asset/goat.png" alt="Goat"
+                    class="goat-img">
+            </div>
+            <div class="content-container">
+                <div class="dialogue-frame">
+                    <img src="asset/chat-frame.png" alt="Chat Frame"
+                        class="frame-img">
+                    <div class="dialogue-content">
+                        <div class="dialogue-text">
+                            <p id="intro-text-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-intro-3')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Màn 3: Intro - Em có làm cho anh trang web -->
+        <section id="screen-intro-3" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="goat-container">
+                <img src="asset/goat.png" alt="Goat"
+                    class="goat-img">
+            </div>
+            <div class="content-container">
+                <div class="dialogue-frame">
+                    <img src="asset/chat-frame.png" alt="Chat Frame"
+                        class="frame-img">
+                    <div class="dialogue-content">
+                        <div class="dialogue-text">
+                            <p id="intro-text-3"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-intro-4')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Màn 4: Intro - Hi vọng anh sẽ thấy mắc cười (crying-goat) -->
+        <section id="screen-intro-4" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="goat-container">
+                <img src="asset/crying-goat.png" alt="Crying Goat"
+                    class="goat-img">
+            </div>
+            <div class="content-container">
+                <div class="dialogue-frame">
+                    <img src="asset/chat-frame.png" alt="Chat Frame"
+                        class="frame-img">
+                    <div class="dialogue-content">
+                        <div class="dialogue-text">
+                            <p id="intro-text-4"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-intro-5')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Màn 5: Intro - Oke dzô nhaa -->
+        <section id="screen-intro-5" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="goat-container">
+                <img src="asset/goat.png" alt="Goat"
+                    class="goat-img">
+            </div>
+            <div class="content-container">
+                <div class="dialogue-frame">
+                    <img src="asset/chat-frame.png" alt="Chat Frame"
+                        class="frame-img">
+                    <div class="dialogue-content">
+                        <div class="dialogue-text">
+                            <p id="intro-text-5"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-countdown')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Màn 6: Countdown -->
+        <section id="screen-countdown" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="countdown-container">
+                <div id="countdown-number" class="countdown-number">3</div>
+            </div>
+        </section>
+
+        <!-- Màn 3: Nhiệm vụ - Donate 5 củ -->
+        <section id="screen-task" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="content-container">
+                <div class="task-frame">
+                    <img src="asset/form-frame.png" alt="Task Frame"
+                        class="frame-img">
+                    <div class="task-content">
+                        <h2 class="task-title">Trước tiên là...</h2>
+                        <p class="task-description">Đô nết 5 củ để được ước với
+                            bánh
+                            kem thần kì nhóee</p>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-challenge')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Section Challenge -->
+        <section id="screen-challenge" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <audio id="challenge-audio" class="challenge-audio" loop>
+                <source src="asset/happy-birthday-j97.mp3" type="audio/mpeg">
+            </audio>
+            <div class="challenge-container">
+                <!-- Phần bên trái - 7 phần diện tích -->
+                <div class="challenge-left">
+                    <!-- Hàng trên - 3 gif lớn -->
+                    <div class="dancing-row-top">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-large">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-large">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-large">
+                    </div>
+                    <!-- Hàng dưới - 6 gif nhỏ -->
+                    <div class="dancing-row-bottom">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-small">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-small">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-small">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-small">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-small">
+                        <img src="asset/j97-dancing.gif" alt="Dancing"
+                            class="dancing-gif dancing-gif-small">
+                    </div>
+                    <!-- Heart beating gifs ở phía sau -->
+                    <img src="asset/heart-beating-1.gif" alt="Heart Beating 1"
+                        class="heart-beating heart-beating-1">
+                    <img src="asset/heart-beating-2.gif" alt="Heart Beating 2"
+                        class="heart-beating heart-beating-2">
+                    <img src="asset/heart-beating-3.gif" alt="Heart Beating 3"
+                        class="heart-beating heart-beating-3">
+                    <!-- Heart rainbow frame -->
+                    <img src="asset/heart-rainbow-frame.png"
+                        alt="Heart Rainbow Frame Bottom Left"
+                        class="heart-rainbow heart-rainbow-bottom-left">
+                    <img src="asset/heart-rainbow-frame.png"
+                        alt="Heart Rainbow Frame Top Right"
+                        class="heart-rainbow heart-rainbow-top-right">
+                </div>
+                <!-- Phần bên phải - 3 phần diện tích -->
+                <div class="challenge-right">
+                    <div class="challenge-game">
+                        <h2 class="challenge-title">Donate 5 củ để được ước với
+                            bánh kem</h2>
+                        <div class="cake-container-challenge">
+                            <img src="asset/cake-candle.gif" alt="Cake"
+                                class="cake-img-challenge">
+                        </div>
+                        <div class="money-container-challenge"
+                            id="money-container-challenge">
+                            <div class="money-item" draggable="true"
+                                data-value="500000">
+                                <img src="asset/500k.png" alt="500k"
+                                    class="money-img">
+                                <span class="money-label">500k</span>
+                            </div>
+                            <div class="money-item" draggable="true"
+                                data-value="100000">
+                                <img src="asset/100k.png" alt="100k"
+                                    class="money-img">
+                                <span class="money-label">100k</span>
+                            </div>
+                            <div class="money-item" draggable="true"
+                                data-value="200000">
+                                <img src="asset/200k.png" alt="200k"
+                                    class="money-img">
+                                <span class="money-label">200k</span>
+                            </div>
+                        </div>
+                        <div class="donate-area" id="donate-area-challenge">
+                            <div class="donate-label">Donate:</div>
+                            <div class="donate-slot" id="donate-slot-challenge">
+                                <div class="donate-total">
+                                    <span id="donate-amount-challenge">0</span>
+                                    VND
+                                </div>
+                            </div>
+                        </div>
+                        <div class="task-status"
+                            id="task-status-challenge"></div>
+                    </div>
+                </div>
+            </div>
+            <img src="asset/rose-frame.png" alt="Rose Frame"
+                class="challenge-rose-frame">
+        </section>
+
+        <!-- Màn 4: Jack ban cho anh 1 điều ước -->
+        <section id="screen-jack-wish" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="goat-container">
+                <img src="asset/goat.png" alt="Goat"
+                    class="goat-img">
+            </div>
+            <div class="content-container">
+                <div class="dialogue-frame">
+                    <img src="asset/form-frame.png" alt="Form Frame"
+                        class="frame-img">
+                    <div class="dialogue-content">
+                        <div class="dialogue-text">
+                            <h2 class="dialogue-title">Hoàn thành!</h2>
+                            <p class="dialogue-text">Thần J97 sẽ ban cho anh 1
+                                điều ước như 1 phần
+                                thưởng..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn"
+                onclick="nextScreen('screen-wish-input')">
+                <img src="asset/next-button.png" alt="Tiếp"
+                    class="next-btn-img">
+            </button>
+        </section>
+
+        <!-- Màn 5: Nhập điều ước -->
+        <section id="screen-wish-input" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+            </div>
+            <div class="content-container">
+                <div class="wish-frame">
+                    <img src="asset/form-frame.png" alt="Form Frame"
+                        class="frame-img">
+                    <div class="wish-content">
+                        <h2 class="wish-title">Nhập điều ước của anh:</h2>
+                        <input type="text" id="wish-input" class="wish-input"
+                            placeholder="Nhập điều ước của anh...">
+                        <button class="submit-btn"
+                            onclick="submitWish()">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Màn 6: Chúc mừng sinh nhật -->
+        <section id="screen-congratulations" class="screen">
+            <div class="background-container">
+                <img src="asset/background.png" alt="Background"
+                    class="background-img">
+                <div class="fireworks-container" id="fireworks"></div>
+            </div>
+            <!-- Decorate ở trên cùng -->
+            <img src="asset/decorate.png" alt="Decorate"
+                class="congrats-decorate-top">
+            <!-- Cake balloon ở dưới cùng center -->
+            <img src="asset/cake-balloon.png" alt="Cake Balloon"
+                class="congrats-cake-balloon">
+            <!-- 3 cat gif ở dưới cùng xếp ngang -->
+            <div class="congrats-cats-container">
+                <img src="asset/vibing-cat.gif" alt="Vibing Cat"
+                    class="congrats-cat">
+                <img src="asset/happy-cat.gif" alt="Happy Cat"
+                    class="congrats-cat">
+                <img src="asset/uia-cat.gif" alt="UIA Cat"
+                    class="congrats-cat">
+            </div>
+            <div class="content-container-2">
+                <button class="view-wishes-btn" onclick="openWishesPopup()">
+                    Xem quẻ nèe..
+                </button>
+            </div>
+            <!-- Pop-up lời chúc -->
+            <div id="wishes-popup" class="wishes-popup"
+                onclick="closeWishesPopup(event)">
+                <div class="wishes-popup-content"
+                    onclick="event.stopPropagation()">
+                    <div class="wishes-popup-header">
+                        <h2>Lời chúc mừng sinh nhật</h2>
+                        <button class="close-popup-btn"
+                            onclick="closeWishesPopup()">×</button>
+                    </div>
+                    <div class="wishes-popup-body">
+                        <div class="wish-item">
+                            <p id="wish-text-1"></p>
+                        </div>
+                        <div class="wish-item">
+                            <p id="wish-text-2"></p>
+                        </div>
+                        <div class="wish-item">
+                            <p id="wish-text-3"></p>
+                        </div>
+                        <div class="wish-item">
+                            <p id="wish-text-4"></p>
+                        </div>
+                        <div class="wish-item">
+                            <p id="wish-text-5" class="highlight"></p>
+                        </div>
+                        <div class="wish-item">
+                            <p id="wish-text-6"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
